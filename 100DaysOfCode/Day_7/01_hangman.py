@@ -41,8 +41,6 @@ for item in range(word_length):
 
 print(display)
 
-
-
 # Ask the user to guess a letter and convert it to lowercase
 guess = input('Guess a letter: ').lower()
 
@@ -56,7 +54,7 @@ for pos in range(word_length):
 print(display)  # Display the updated display
 
 for item in display:
-    if not '_' in display: 
+    if '_' in display: 
         c += 1
 
 
