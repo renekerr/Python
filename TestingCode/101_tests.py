@@ -1,8 +1,67 @@
 
-#join(): Returns a concatenated string
-web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
-result = ' '.join(web_tech)
-print(result) # 'HTML CSS JavaScript React'
+lives = 6
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+lives = 6
+
+stages_len = len(stages)
+print(lives-stages_len + 1)
+
+
 
 
 

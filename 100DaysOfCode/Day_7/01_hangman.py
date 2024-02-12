@@ -95,24 +95,22 @@ chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 display = []
 blanks_left = True
-lives = 6
+lives = 7
+found = 0
+len_stages = len(stages)
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
-<<<<<<< HEAD
-=======
 
-display = []
-c = 0
-u = '_'
->>>>>>> 2a40931edd3cb3ab25768fb18fe36b8d5a069eca
 for item in range(word_length):
     display.append('_') # or simply use display += '_'
 
 while blanks_left or lives == 0:
+    
     # Ask the user to guess a letter and convert it to lowercase
     guess = input('Guess a letter: ').lower()
+    
 
     # Loop through each position in the chosen_word
     for pos in range(word_length):
@@ -120,11 +118,25 @@ while blanks_left or lives == 0:
         if guess == letter:
             display[pos] = letter  # If the guessed letter matches, reveal it in the display
 
-    print(f"{''.join(display)}")  # Display the updated display
+    for item in chosen_word:
+         if item == guess:
+             found += 1
+    
+    if found == 0:
+         lives -= 1
+         print(stages[lives - len_stages])
 
+    # print(f'{lives} lives left')
+
+    print(f"{''.join(display)}")  # Display the updated display
+    
     if not '_' in display:
             blanks_left = False
             print('You win!')
+    
+    if lives == 0:
+      print('You lose!')
+      lives = 0
 
 
 
