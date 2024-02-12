@@ -1,0 +1,28 @@
+Table of common methods for Strings
+
+Method                                       Description
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨               ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+s.capitalize()	                             The first character of s is put in uppercase
+s.center([width])	                         Centers s in a field of length width
+s.count(sub [,start [, end]])	             Counts occurrences of sub between start and end
+s.encode([encoding [, errors]])	             Encode s using encoding as code and error
+s.expandtabs([tabsize])	                     Expands tabs
+s.find(sub [, start [, end]])	             Finds the first occurrence of sub between start and end
+s.index(sub [,start [, end]])	             same as find but raises an exception if no occurrence is found
+s.islower()	                                 Returns True if all chracters are lowercase, False otherwise
+s.isupper()	                                 Returns True if all chracters are uppercase, False otherwise
+s.join(words)	                             Joins the list of words with s as delimiter
+s.ljust(width)	                             Left align s in a string of length width
+s.lower()	                                 Returns a lowercase version of s
+s.lstrip()	                                 Removes all leading whitespace characters of s
+s.replace(old, new [, maxrep])	             Replace maximal maxrep versions of substring old with substring new
+s.rfind(sub [, start [, end]])	             Finds the last occurrence of substring sub between start and end
+s.rindex(sub [,start [, end]])	             Same as rfind but raise an exception if sub does not exists
+s.rjust(width)	                             Right-align s in a string of length width
+s.rstrip()	                                 Removes trailing whitespace characters
+s.split([sep [, maxsplit]]))	             Split s into maximal maxsplit words using sep as separator (default whitespace)
+s.splitlines([keepends])	                 Split s into lines, if keepends is 1 keep the trailing newline
+s.strip()	                                 Removes trailing and leading whitespace characters
+s.swapcase()	                             Returns a copy of s with lowercase letters turn into uppercase and vice versa
+s.title()	                                 Returns a title-case version of s (all words capitalized)
+s.upper()	                                 Returns an uppercase version of s

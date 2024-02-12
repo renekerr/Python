@@ -1,0 +1,96 @@
+Python. Notes.
+How to select a valid identifier
+
+IDENTIFIERS
+Case sensitive (X and x are two diff things)(e.g: abc and Abc)
+Can ONLY contain letters, numbers and underscores (e.g: my_test1)
+Can NOT start with a number (e.g: 2x)
+Can NOT be the same as Python keywords (e.g: for, in)
+
+Recommendation
+Use descriptive identifiers to name your variables. This helps to make your programs more readable
+
+When your identifier (variable name) has more than one word, use "_" (underscore) to separate the words. Example: 
+
+rectangle_area = rectangle_width * rectangle_height
+
+COMMENTS
+To comment a line or a portion of a line use "#" (hash)
+All characters after the "#" are ignored by Python
+
+KEYWORDS
+
+Keywords are special words that are reserved by Python and cannot be used by you to name things. They indicate commands to the Python interpreter. The following is a complete list of Python keywords:
+
+and	del	from	not	while
+as	elif	global	or	with
+assert	else	if	pass	yield
+break	except	import	nonlocal	class
+lambda	in	raise	continue	finally
+is	return	def	for	 
+try	True	False	None
+
+
+VARIABLES TYPES
+How many children do you have? 
+3 Integer(int)
+
+How much do you weigh in kg?
+75.6 Floating point number(float)
+
+What's your name?
+"Jeff" String(str)
+
+Are you happy?
+True Boolean(bool)
+
+Variable Type 'int'
+When we type the following line in Python
+x =3+5
+-Python calculates the right side of the "=" sign
+-Puts the result in a memory location
+-Associates that location with the identifier x. In other words, it gives a name to that location 
+-Since the result of the right side is an integer, the type of this variable will be 'int'
+
+Example. Var type 'int'
+>>> x=3+5
+>>> print(x)
+8
+>>> print(type(x))
+<class 'int'>
+
+Example. Var type 'float'
+>>> x=3+5
+>>> print(x)
+8
+>>> print(type(x))
+<class 'int'>
+
+Example. Var type 'bool'
+>>> z= False
+>>> print(z)
+False
+>>> print(type(z))
+<class 'bool'>
+>>>
+
+Operators and Operands
+In the following example
+
+3 * 2
+
+3 and 2 are the operands and '*' is an operator because it operates on 3 and 2
+
+Python Operators
+
+Types -> 		symbols
+
+Mathematical -> +, -, *, /, **, %, //, -. Ex: 1+2. Result:3
+
+Relational <, <=, >, >=, !=, ==. Ex: 5 < 4. Result: False
+
+Logical -> or, and, not. Ex: True or False. Result: True
+
+
+
+	 

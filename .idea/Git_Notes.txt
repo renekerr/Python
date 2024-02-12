@@ -1,0 +1,40 @@
+https://training.github.com/downloads/es_ES/github-git-cheat-sheet.pdf
+
+Generar una nueva clave SSH
+
+$ ssh-keygen -t ed25519 -C "rrenekerr@gmail.com"
+Hit Enter three times
+
+Agregar tu clave SSH al ssh-agent
+
+Verifica que el agente ssh-agent se esté ejecutando
+eval "$(ssh-agent -s)"
+Agent pid 1823
+
+
+Agrega tu llave privada SSH al ssh-agent
+ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/renek/.ssh/id_ed25519 (rrenekerr@gmail.com)
+
+Agrega la clave pública de SSH a tu cuenta en GitHub
+clip < ~/.ssh/id_ed25519.pub
+Profile > Settings > SSH & GPG keys
+New key
+
+git remote add origin https://github.com/renekerr/test.git
+git push -u origin main
+
+
+-- Windows update 
+Get-ExecutionPolicy
+Set-ExecutionPolicy Unrestricted
+Install-Module PSWindowsUpdate
+
+Get-WindowsUpdate
+get-command -module PSWindowsUpdate
+  23 get-command -module PSWindowsUpdate
+  24 Get-WUList
+  25 Get-WUlist -MicrosoftUpdate
+  26 Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+  27 Get-WUList
+  28 Get-WUlist -MicrosoftUpdate
