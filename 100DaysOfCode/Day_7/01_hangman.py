@@ -22,40 +22,102 @@
 
 #TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
 
+#Step 4
+#TODO-1: - Create a variable called 'lives' to keep track of the number of lives left. 
+#Set 'lives' to equal 6.
+
+#TODO-2: - If guess is not a letter in the chosen_word,
+#Then reduce 'lives' by 1. 
+#If lives goes down to 0 then the game should stop and it should print "You lose."
+
+#TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
+
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 word_list = ["aardvark", "baboon", "camel"]
 
-chosen_word = ''
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
+display = []
+blanks_left = True
+lives = 6
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
-
-display = []
-c = 0
-
 for item in range(word_length):
     display.append('_') # or simply use display += '_'
 
-print(display)
+while blanks_left or lives == 0:
+    # Ask the user to guess a letter and convert it to lowercase
+    guess = input('Guess a letter: ').lower()
 
-# Ask the user to guess a letter and convert it to lowercase
-guess = input('Guess a letter: ').lower()
+    # Loop through each position in the chosen_word
+    for pos in range(word_length):
+        letter = chosen_word[pos]
+        if guess == letter:
+            display[pos] = letter  # If the guessed letter matches, reveal it in the display
 
+    print(f"{''.join(display)}")  # Display the updated display
 
-# Loop through each position in the chosen_word
-for pos in range(word_length):
-    letter = chosen_word[pos]
-    if guess == letter:
-        display[pos] = letter  # If the guessed letter matches, reveal it in the display
-
-print(display)  # Display the updated display
-
-for item in display:
-    if '_' in display: 
-        c += 1
+    if not '_' in display:
+            blanks_left = False
+            print('You win!')
 
 
 
