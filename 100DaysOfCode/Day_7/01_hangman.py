@@ -100,6 +100,13 @@ lives = 6
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
+<<<<<<< HEAD
+=======
+
+display = []
+c = 0
+u = '_'
+>>>>>>> 2a40931edd3cb3ab25768fb18fe36b8d5a069eca
 for item in range(word_length):
     display.append('_') # or simply use display += '_'
 
