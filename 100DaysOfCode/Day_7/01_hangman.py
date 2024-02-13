@@ -32,7 +32,18 @@
 
 #TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
 
-import random
+#Step 5
+#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
+#Delete this line: word_list = ["ardvark", "baboon", "camel"]
+
+#TODO-2: - Import the stages from hangman_art.py and make this error go away.
+
+#TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+
+#TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+
+#TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+
 stages = ['''
   +---+
   |   |
@@ -89,54 +100,49 @@ stages = ['''
       |
 =========
 ''']
-word_list = ["aardvark", "baboon", "camel"]
 
+import random
+import mod_hangman_art
+import mod_hangman_words
+
+word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
-display = []
-blanks_left = True
-lives = 7
-found = 0
-len_stages = len(stages)
+end_of_game = False
+lives = 6
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
-
+# Create blanks
+display = []
 for item in range(word_length):
     display.append('_') # or simply use display += '_'
 
-while blanks_left or lives == 0:
-    
-    # Ask the user to guess a letter and convert it to lowercase
+while not end_of_game:
+    # User input
     guess = input('Guess a letter: ').lower()
-    
 
     # Loop through each position in the chosen_word
-    for pos in range(word_length):
-        letter = chosen_word[pos]
+    for position in range(word_length):
+        letter = chosen_word[position]
+        #print(f'Current position {position}\nCurrent letter {letter}\nGuessed letter {guess}')
         if guess == letter:
-            display[pos] = letter  # If the guessed letter matches, reveal it in the display
+            display[position] = letter
 
-    for item in chosen_word:
-         if item == guess:
-             found += 1
-    
-    if found == 0:
-         lives -= 1
-         print(stages[lives - len_stages])
+    print(f"{' '.join(display)}")       
 
-    # print(f'{lives} lives left')
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            end_of_game = True
+            print('You lose.')
 
-    print(f"{''.join(display)}")  # Display the updated display
-    
     if not '_' in display:
-            blanks_left = False
-            print('You win!')
+        end_of_game = True
+        print('You win.')
     
-    if lives == 0:
-      print('You lose!')
-      lives = 0
+    print(stages[lives])
 
 
 
