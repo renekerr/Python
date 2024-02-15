@@ -44,72 +44,17 @@
 
 #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
 import random
-import mod_hangman_art
-import mod_hangman_words
+from mod_hangman_art import *
+from mod_hangman_words import *
 
-word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 end_of_game = False
 lives = 6
+
+print(logo)
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
@@ -122,7 +67,9 @@ for item in range(word_length):
 while not end_of_game:
     # User input
     guess = input('Guess a letter: ').lower()
-
+    if guess in display:
+        print(f"Letter {guess} already guessed.")
+        
     # Loop through each position in the chosen_word
     for position in range(word_length):
         letter = chosen_word[position]
