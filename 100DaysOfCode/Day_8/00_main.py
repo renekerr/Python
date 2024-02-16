@@ -60,5 +60,13 @@ coverage = 5
 
 paint_calc(height = h, width = w, cover=coverage)
 
+# Prime number
+def prime_checker(number):
+    if number < 2:
+        print('Not a prime number!')
+
+    for i in (2,number):
+        if number % i == 0:
+            
 
 
