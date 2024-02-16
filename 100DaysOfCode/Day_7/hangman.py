@@ -49,6 +49,13 @@ import random
 from mod_hangman_art import *
 from mod_hangman_words import *
 
+import os
+def clear_screen():
+    if os.name == 'nt':  # Windows
+        os.system('cls')
+    else:  # Linux/OS X
+        os.system('clear')
+
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 end_of_game = False
@@ -64,33 +71,47 @@ display = []
 for item in range(word_length):
     display.append('_') # or simply use display += '_'
 
+# Rules
+print('IMPORTANT')
+print('\t-Guess a letter at a time.')
+print('\t-Numbers or special characters are not allowed.')
+print('\t-You can try up to six times.\n')
+
 while not end_of_game:
     # User input
     guess = input('Guess a letter: ').lower()
-    if guess in display:
-        print(f"Letter {guess} already guessed.")
-        
-    # Loop through each position in the chosen_word
-    for position in range(word_length):
-        letter = chosen_word[position]
-        #print(f'Current position {position}\nCurrent letter {letter}\nGuessed letter {guess}')
-        if guess == letter:
-            display[position] = letter
+    clear_screen()
 
-    print(f"{' '.join(display)}")       
+    # Ensure the user's input is a single letter
+    if len(guess) == 1 and guess.isalpha():
+        if guess in display: 
+            print(f"You've already guessed the letter {guess}")
 
-    if guess not in chosen_word:
-        lives -= 1
-        if lives == 0:
-            end_of_game = True
-            print('You lose.')
+        # Loop through each position in the chosen_word
+        for position in range(word_length):
+            letter = chosen_word[position]
+            #print(f'Current position {position}\nCurrent letter {letter}\nGuessed letter {guess}')
+            if guess == letter:
+                display[position] = letter
 
-    if not '_' in display:
-        end_of_game = True
-        print('You win.')
+        print(f"{' '.join(display)}")  
     
-    print(stages[lives])
+        if guess not in chosen_word:
+            lives -= 1
+            print(f"You guessed {guess}, that's not in the word. You have {lives} lives left.")
+            
+            if lives == 0:
+                end_of_game = True
+                print(f"Sorry, you lose!. Chosen word to guess was '{chosen_word}'")
 
+        if not '_' in display:
+            end_of_game = True
+            print('Congrats, you win.')
 
+        print(stages[lives])
+    else:
+        print('Enter a single letter, please. Try again')
+        # Quit game or keep trying
+        #end_of_game = True 
 
 
