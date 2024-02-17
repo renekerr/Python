@@ -19,7 +19,7 @@ def prime_number(n):
             return False
     return True
 
-n = 7
+n = 27
 f = prime_number(n)
 
 print(f)
