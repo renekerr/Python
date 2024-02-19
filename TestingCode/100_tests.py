@@ -10,8 +10,6 @@ for i in text:
     cipher_text += alphabet_shifted[k]
     #print(f"{i} on  alphabet index is {k}\t|\tvalue of index {k} on alphabet_shifted is {alphabet_shifted[k]}")
 
-
-
 print(f"The encoded text is {cipher_text}")
 
 

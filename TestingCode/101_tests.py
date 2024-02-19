@@ -2,7 +2,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 shift = 9
 alphabet_shifted= alphabet[shift:] + alphabet[:shift]
 
-
 text = 'idud'
 cipher_text = ''
 
