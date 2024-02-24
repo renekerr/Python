@@ -7,9 +7,7 @@ Day 3 - Beginner - Control Flow and Logical Operators
 
 
 '''
-  _   _   _  _      ___ _   _   __ 
- / \ |_) |_ |_)  /\  | / \ |_) (_  
- \_/ |   |_ | \ /--\ | \_/ | \ __) 
+OPERATORS
                                    
 
 https://github.com/Asabeneh/30-Days-Of-Python/blob/master/03_Day_Operators/03_operators.md#-exercises---day-3

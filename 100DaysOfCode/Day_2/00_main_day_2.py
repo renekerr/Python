@@ -2,10 +2,7 @@
 Day 2 - Beginner - Understanding Data Types and How to Manipulate Strings
 
 
-  _      ___       ___     _   _  __          __ ___ _  ___       __  __ 
- | \  /\  |  /\     | \_/ |_) |_ (_    ()    (_   | |_)  |  |\ | /__ (_  
- |_/ /--\ | /--\    |  |  |   |_ __)   (_X   __)  | | \ _|_ | \| \_| __) 
-                                                                         
+DATA TYPES & STRINGS
 
 
 '''

@@ -4,9 +4,7 @@ Day 4 - Randomisation and Python Lists
 
 '''
 
-  _             _   _       ___  __     ___ ___  _       
- |_)  /\  |\ | | \ / \ |\/|  |  (_   /\  |   |  / \ |\ | 
- | \ /--\ | \| |_/ \_/ |  | _|_ __) /--\ |  _|_ \_/ | \| 
+RANDOMISATION & LISTS
                                                          
 
 '''
@@ -30,12 +28,16 @@ print(nrfloat)
 
 
 '''
+LISTS
+Lists:
 
-    ___  __ ___ __ 
- |   |  (_   | (_  
- |_ _|_ __)  | __) 
-                   
+Ordered collection of items
+Accessed by position (index)
+Allow duplicate items
+Can store any data type  
 
+Example: 
+    Shopping list with items in a specific order
 '''
 
 # Lists
@@ -56,4 +58,7 @@ dirty_dozen = [fruits, vegetables]
 print(dirty_dozen[1])
 
 print(dirty_dozen[1][1]) # this will print the second item of the second list which is Kale
+
+
+
 

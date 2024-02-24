@@ -2,10 +2,7 @@
  Day 1 - Beginner - Working with Variables in Python to Manage Data
 
  
-           _  ___       _      _  __   
- \  / /\  |_)  |   /\  |_) |  |_ (_    
-  \/ /--\ | \ _|_ /--\ |_) |_ |_ __)   
-                                       
+VARIABLES
 
  '''
 

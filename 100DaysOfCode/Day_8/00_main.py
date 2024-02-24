@@ -3,11 +3,7 @@ Day 8 - Functions with inputs (parameters)
 '''
 
 '''
-  _           _ ___ ___  _        __         ___ ___       _       _             _ ___ _  _   __ 
- |_ | | |\ | /   |   |  / \ |\ | (_    \    / |   | |_|   |_) /\  |_)  /\  |\/| |_  | |_ |_) (_  
- |  |_| | \| \_  |  _|_ \_/ | \| __)    \/\/ _|_  | | |   |  /--\ | \ /--\ |  | |_  | |_ | \ __) 
-                                                                                                                                
-
+FUNCTIONS WITH PARAMETERS
 '''
 # Greeting I
 def greet():
