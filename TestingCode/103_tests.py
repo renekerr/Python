@@ -18,3 +18,7 @@ while not end_add:
         print('Goodbye')
     else:
         end_add = False
+
+# Max number in a list
+numbers = [130, 20, 40, 120]
+print(max(numbers))
