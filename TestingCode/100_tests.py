@@ -1,18 +1,18 @@
 # Fill an empty dictionary
-auction_bidders = {}
+user_info = {}
 
-name = input('Name? ')
-bid = int(input('Bid amount? '))
-auction_bidders[name] = bid
-print(auction_bidders)
+stop_add = False
 
-name = input('Name? ')
-bid = int(input('Bid amount? '))
-auction_bidders[name] = bid
+while not stop_add:
+    user_name = input('User name: ')
+    user_age = int(input('Age: '))
 
+    user_info[user_name] = user_age
 
-print(auction_bidders)
-
+    continue_adding = input("Add more users, 'yes' or 'no'. ")
+    if continue_adding == 'no':
+        stop_add = True
+        print()....
 
 
 

@@ -1,5 +1,5 @@
 '''
-Day 9 - Functions with inputs (parameters)
+Day 9 - Dictionaries, Nesting and the Secret Auction
 '''
 
 '''
