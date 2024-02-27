@@ -1,6 +1,7 @@
 # Calculator
 from art import logo
-print(logo)
+from mod_clear_screen import clear_screen
+
 
 def add(n1, n2):
   return n1 + n2
@@ -14,39 +15,35 @@ def multiply(n1, n2):
 def divide(n1, n2):
   return n1 / n2
 
-result = 0
-accumulated = 0
-continue_calc = False
 operations = {"+": add, "-": subtract, "*": multiply, "/": divide}
+print(logo)
 
-# First number
-num1 = int(input("What's the first number?: "))
+def calculator():
+  num1 = float(input("Enter the first number?: "))
+  should_continue = True
+  
+  while should_continue:
+    operation_symbol = input("Pick an operation (+, -, * or /): ")
+    num2 = float(input("Enter another number?: "))
 
-# Operations
-for key, value in operations.items():
-  print(key)
+    calculation = operations[operation_symbol](num1,num2) 
+    result = calculation
 
-operation_symbol = input("Pick an operation from the line above: ")
+    print(f'{num1} {operation_symbol} {num2} = {result}')
 
-# Second number
-num2 = int(input("What's the second number?: "))
+    calculate_again = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation, or 'exit' to stop.: ")
 
-# Calculation and result
-calculation = operations[operation_symbol](num1,num2)
-first_result = calculation
-
-# Printing out the result (first)
-print(f'{num1} {operation_symbol} {num2} = {first_result}')
-calculate_again = input(f"Type 'y' to continue calculating with {first_result}, or type 'n' to exit.: ")
-
-operation_symbol = input("Pick another operation (+, -, * or /): ")
-num3 = int(input("What's the next number?: "))
-calculation = operations[operation_symbol](first_result, num3)
-second_result = calculation
-
-# Printing out the result (second)
-print(f'{first_result} {operation_symbol} {num3} = {second_result}')
-
+    if calculate_again == 'y':
+      num1 = result
+    elif calculate_again == 'n':
+      clear_screen()
+      calculator()
+    elif calculate_again == 'exit':
+      should_continue = False  # Set should_continue to False to exit the loop
+      print("Goodbye!")
+      break  # Exit the loop
+      
+calculator()
 
 
 
@@ -63,6 +60,10 @@ calculation = operations[operation_symbol]
 result = calculation(num1,num2)
 '''
 
+
+# Operations
+# for key, value in operations.items():
+#   print(key)
 
 
 # if operation_symbol == '+':
