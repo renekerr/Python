@@ -1,7 +1,7 @@
 # Calculator
+from mod_exit_program import exit_program
 from art import logo
 from mod_clear_screen import clear_screen
-
 
 def add(n1, n2):
   return n1 + n2
@@ -13,37 +13,45 @@ def multiply(n1, n2):
   return n1 * n2
 
 def divide(n1, n2):
+  if n2 == 0:
+    return 'Division by zero is not allowed.'
   return n1 / n2
 
+def perform_calculation(first_number, second_number, operator):
+    """Performs a calculation based on the given operator."""
+    calculation_result = operations[operator](first_number, second_number)
+    return calculation_result
+
 operations = {"+": add, "-": subtract, "*": multiply, "/": divide}
-print(logo)
 
 def calculator():
+  print(logo)
   num1 = float(input("Enter the first number?: "))
   should_continue = True
-  
+
   while should_continue:
-    operation_symbol = input("Pick an operation (+, -, * or /): ")
+    operator  = input("Pick an operation (+, -, * or /): ")
     num2 = float(input("Enter another number?: "))
 
-    calculation = operations[operation_symbol](num1,num2) 
-    result = calculation
+    calculation_result = perform_calculation(num1, num2, operator)
 
-    print(f'{num1} {operation_symbol} {num2} = {result}')
+    print(f'{num1} {operator } {num2} = {calculation_result }')
 
-    calculate_again = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation, or 'exit' to stop.: ")
+    calculate_again = input(f"Type 'y' to continue calculating with {calculation_result }, or type 'n' to start a new calculation, or type 'exit' to quit calculator: ")
 
     if calculate_again == 'y':
-      num1 = result
+      num1 = calculation_result 
     elif calculate_again == 'n':
       clear_screen()
       calculator()
     elif calculate_again == 'exit':
-      should_continue = False  # Set should_continue to False to exit the loop
-      print("Goodbye!")
-      break  # Exit the loop
-      
+      exit_program()
+
+
+# Call calculator function
 calculator()
+
+
 
 
 
