@@ -28,20 +28,6 @@ Day 11 - Blackjack Capstone Project
 #Then try out the completed Blackjack project here: 
 #   http://blackjack-final.appbrewery.repl.run
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Hint 2: Read this breakdown of program requirements: 
 #   http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
 #Then try to create your own flowchart for the program.
