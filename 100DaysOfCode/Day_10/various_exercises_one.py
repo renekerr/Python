@@ -44,11 +44,12 @@ See more https://docs.python.org/3/library/stdtypes.html#range
 
 #2
 print('#2')
-def my_fun(x,y):
-    m = x ** y
+def exponent_fn(x,y):
+    exp = x ** y
     # Result is None, no 'return' any value(s)
+    return exp
 
-y = my_fun(2,3)
+y = exponent_fn(2,3)
 print(y)
 print('\n')
 
@@ -56,10 +57,13 @@ print('\n')
 #3
 print('#3')
 i = 1
+
 while False:
+    # This is a while loop with a condition that is always False. Therefore, the code inside the loop will never execute.
     if i % 5 == 0:
         break
     i = i + 2
+
 print(i)
 print('\n')
 
@@ -76,12 +80,12 @@ print('\n')
 
 #5
 print('#5')
-def my_fun(a):
+def modfiy_values(a):
     a[0] = 'new value:'
     a[1] = a[1] + 1
 
 x = ['old value:', 99]
-my_fun(x)
+modfiy_values(x)
 print (x[0], x[1])
 print('\n')
 
@@ -135,15 +139,16 @@ print('\n')
 
 #10
 print('#10')
-def my_fun(x):
+def max_item_count(x):
     z=0
     for item in x:
         m = x.count(item)
         if m > z:
             z=m
     return z
+
 y = ["cat", 4, "dog" , "cat" , 2, "cat", 2]
-print (my_fun(y))
+print (max_item_count(y))
 print('\n')
 
 
