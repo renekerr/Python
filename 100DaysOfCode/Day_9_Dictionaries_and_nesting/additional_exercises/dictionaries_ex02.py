@@ -13,8 +13,8 @@ print('\n')
 print('Example_2')
 numbers = {"one": "uno", "two": "dos"}
 pass
-numbers["two"]=1
-#print (numbers["dos"]) KeyError: 'dos'
+numbers["two"] = 2
+print (numbers["dos"]) #KeyError: 'dos'
 print("KeyError: 'dos'")
 print('\n')
 

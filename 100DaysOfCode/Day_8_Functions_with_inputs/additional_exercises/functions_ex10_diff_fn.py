@@ -18,23 +18,10 @@ print("\n")
 print("Exercise_2")
 print("¨¨¨¨¨¨¨¨¨¨¨")
 
-def my_fun(a):
+def calculation(a):
     return a*2
 
 # Main program
-print(my_fun(2)+my_fun(3))
+print(calculation(2) + calculation(3))
 print("\n")
 
-
-
-
-#3
-print("Exercise_3")
-print("¨¨¨¨¨¨¨¨¨¨¨")
-
-def my_fun(a):
-    return a*2
-
-# Main program
-print(my_fun(my_fun(2)))
-print("\n")

@@ -56,22 +56,7 @@ coverage = 5
 
 paint_calc(height = h, width = w, cover=coverage)
 
-# Prime number
-def prime_checker(number):
-    prime = True
-    if number <= 1:
-        prime = False
-    for i in range(2, number):
-        if number % i == 0:
-            prime = False
 
-    if prime:
-        print(f"{number} is a prime number.")
-    else:
-        print(f"{number} is not a prime number")
-
-n = int(input('Enter a number: '))
-prime_checker(number = n)
 
 
 

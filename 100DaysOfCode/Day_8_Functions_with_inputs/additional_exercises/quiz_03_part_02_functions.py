@@ -45,7 +45,7 @@ def find_max(a, b):
 find_max(3, 4)
 
 #7
-def my_fun(x):
+def count_item(x):
     count = 0
     for str in x:
         if str == "cat":
@@ -54,18 +54,18 @@ def my_fun(x):
             count = count - 1
     return count
 z = ['cat', 2, 'cat', 'dog', 34, 'cat']
-print(my_fun(z))
+print(count_item(z))
 
 #8
-def myFun():
+def test_function():
     count = 0
     for x in range (0,3):
         count = count + x
     return
-print(myFun())
+print(test_function())
 
 #9
-def fun1(x,y):
+def function_call(x,y):
    z = multiply(x,y)
    m = x + z
    return m
@@ -76,11 +76,11 @@ def multiply(a,b):
 
 x = 2
 y = 4
-z = fun1(x,y)
+z = function_call(x,y)
 print (x,y,z)
 
 #10
-def my_fun(x):
+def function_check(x):
     for m in range(0,3):
         n = 2
         while n <= 4:
@@ -88,6 +88,6 @@ def my_fun(x):
                 x = x + 1
             n = n + 1
     return x
-print(my_fun(5))
+print(function_check(5))
 
 

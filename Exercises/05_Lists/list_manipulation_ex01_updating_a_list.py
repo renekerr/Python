@@ -19,8 +19,6 @@ input_string = input('Enter a string: ')
 print('List')
 print(input_list, '\n')
 
-
-
 f = slice_function_1(input_list, input_string)
 print('List modified: ')
 print(f)
