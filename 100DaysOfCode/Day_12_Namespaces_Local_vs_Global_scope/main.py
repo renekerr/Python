@@ -77,5 +77,9 @@ def increase_enemies():
 increase_enemies()
 print(f"enemies outside function: {player_score}")
 
+# Global Constants
+PI = 3.14159
+URL = "https://www.google.com"
+
 
 
