@@ -27,7 +27,7 @@ def difficulty_level():
 def play_game(): 
     print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")           
     generated_number = randint(1,100)
-    print(f'Pssst, the correct answer is {generated_number}')
+    # print(f'Pssst, the correct answer is {generated_number}')
 
     turns = difficulty_level()
     print(f'Total attempts : {turns}\n')
