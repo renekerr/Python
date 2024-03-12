@@ -1,26 +1,10 @@
 import random
 
 def random_number():
-    '''
-    Generates and returns a random number between 1 and 100 including both endpoints.
-
-    Returns:
-        int: A random integer
-    '''
     generated_number = random.randint(1,100)
     return generated_number
 
 def guess_number(difficulty_level):
-    '''
-    Runs the number guessing game based on the given difficulty level.
-
-    Parameters:
-        level (str): The difficulty level of the game, either 'easy' or 'hard'.
-
-    Returns:
-        None
-    '''
-
     if difficulty_level == 'hard':
         attempts = 5
     elif difficulty_level == 'easy':
