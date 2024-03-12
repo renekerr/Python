@@ -25,7 +25,7 @@ def days_left():
     print(f'You have {days} days left.')
 
 days_left()
-print(f'You have {days} days left.') # NameError: name 'days' is not defined
+# print(f'You have {days} days left.') # NameError: name 'days' is not defined
 
 # Global scope example 1
 player_score = 100 # global variable
@@ -46,7 +46,7 @@ def game():
         print(f'Value accessed from inside the function {player_score}')
     scoring()   # should be indented and be part of game()
 
-scoring() # Error: can be accessed from inside game() function 
+# scoring() # Error: can be accessed from inside game() function 
 
 print(f'Value accessed from outside the function {player_score}')   
 
@@ -65,7 +65,7 @@ def game_copy():
    if game_level < 5:
        new_enemy_copy= enemies[0]
 
-print(new_enemy_copy) # Error: variable new_enemy_copy cannot be accessed
+# print(new_enemy_copy) # Error: variable new_enemy_copy cannot be accessed
 
 # Modifying Global Scope
 player_score = 1
