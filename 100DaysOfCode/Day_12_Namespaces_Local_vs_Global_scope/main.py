@@ -11,11 +11,11 @@ Local vs Global scope
 # SCOPE
 enemies = 1
 
-def increase_enemies():
+def increase_enemies_v1():
     enemies = 2 
     print(f'enemies inside the function: {enemies}')
 
-increase_enemies()
+increase_enemies_v1()
 print(f'enemies outside the function: {enemies}')
 
 
