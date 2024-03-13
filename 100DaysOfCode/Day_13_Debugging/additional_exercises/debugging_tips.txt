@@ -1,0 +1,12 @@
+'''
+1- Describe the problem. Untangle problem in yor head.
+2- Reproduce the bug.
+3- Play computer.
+4- Fix the errors.
+5- Print is your friend.
+6- Use a debugger.
+7- Take a break.
+8- Ask someone else.
+9- Run your code often.
+10- Ask stackoverflow.
+'''
