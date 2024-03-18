@@ -16,9 +16,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="1ylgpMtz3TgQAnBfjsXcHpe6a3e" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -36,13 +36,15 @@
     "Python.higher_lower_game (3).executor": "Run",
     "Python.higher_lower_game.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.menu_resources.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rene/OneDrive/Documentos/P Y T  H O N",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/renek/OneDrive/Documentos/P Y T  H O N",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -50,6 +52,30 @@
       <recent name="$PROJECT_DIR$/100DaysOfCode/Day_14_Higher_Lower_Project" />
       <recent name="$PROJECT_DIR$/100DaysOfCode/Day_14_Higher_Lower_Project/additional_exercises" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.higher_lower_game">
+    <configuration name="menu_resources" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="WORK" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/100DaysOfCode/Day_15_Local_Dev_Env_Setup_Coffee_Machine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/100DaysOfCode/Day_15_Local_Dev_Env_Setup_Coffee_Machine/menu_resources.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
