@@ -10,16 +10,12 @@
 from menu_resources import *
 
 
-def report():
-    water_available = resources['water']
-    milk_available = resources['milk']
-    coffee_available = resources['coffee']
-
+def report(water_count, milk_count, coffee_count, money_count):
     print('\nSummary')
-    print(f'Water   : {water_available} ml')
-    print(f'Milk    : {milk_available} ml')
-    print(f'Coffee  : {coffee_available} gr')
-    print(f'Money   : {benefits} $\n')
+    print(f'Water   : {water_count} ml')
+    print(f'Milk    : {milk_count} ml')
+    print(f'Coffee  : {coffee_count} gr')
+    print(f'Money   : {money_count} $\n')
 
 
 def resources_check(user_selection):
@@ -49,7 +45,12 @@ def money_provided_sum(quarters_in, dimes_in, nickles_in, pennies_in):
 
 
 def money_validation(total_cash, cost):
-    if total_cash < cost:
+    if total_cash >= cost:
+        print('Preparing coffee and change...please wait!')
+        change_amount = total_cash - cost
+        print(f'Here is your coffee')
+        print(f'Change: {change_amount:.2F} $')
+    else:
         print("Sorry that's not enough money. Money refunded.")
 
 
@@ -63,7 +64,7 @@ while not machine_off:
         print('Coffee machine turned off')
         machine_off = True
     elif user_choice == 'report':
-        report()
+        report(water_count = resources['water'], milk_count = resources['milk'], coffee_count = resources['coffee'], money_count = benefits)
     elif user_choice in ('espresso', 'latte', 'cappuccino'):
         resources_check(user_choice)
         coffee_cost = MENU[user_choice]['cost']
