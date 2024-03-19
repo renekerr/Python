@@ -10,7 +10,11 @@
 from menu_resources import *
 
 
-def report(water_count, milk_count, coffee_count, money_count):
+def report_updated(water, milk, coffee, earnings):
+    return water, milk, coffee, earnings
+
+
+def print_report(water_count, milk_count, coffee_count, money_count):
     print('\nSummary')
     print(f'Water   : {water_count} ml')
     print(f'Milk    : {milk_count} ml')
@@ -44,12 +48,15 @@ def money_provided_sum(quarters_in, dimes_in, nickles_in, pennies_in):
     return total_sum
 
 
-def money_validation(total_cash, cost):
+def money_validation(total_cash, cost, selection):
+    coffee_delivered = False
     if total_cash >= cost:
-        print('Preparing coffee and change...please wait!')
+        print('Preparing your coffee and your change...please wait!')
         change_amount = total_cash - cost
-        print(f'Here is your coffee')
+        print(f'Here is your {selection}.')
         print(f'Change: {change_amount:.2F} $')
+        coffee_delivered = True
+        return coffee_delivered
     else:
         print("Sorry that's not enough money. Money refunded.")
 
@@ -64,7 +71,8 @@ while not machine_off:
         print('Coffee machine turned off')
         machine_off = True
     elif user_choice == 'report':
-        report(water_count = resources['water'], milk_count = resources['milk'], coffee_count = resources['coffee'], money_count = benefits)
+        w, m, c, e = report_updated(water=resources['water'], milk=resources['milk'], coffee=resources['coffee'], earnings=benefits)
+        print_report(w, m, c, e)
     elif user_choice in ('espresso', 'latte', 'cappuccino'):
         resources_check(user_choice)
         coffee_cost = MENU[user_choice]['cost']
@@ -78,7 +86,16 @@ while not machine_off:
         pennies_entered = int(input('\tHow many pennies? '))
 
         total_money = money_provided_sum(quarters_entered, dimes_entered, nickles_entered, pennies_entered)
-        money_validation(total_money, coffee_cost)
+        product_delivered = money_validation(total_money, coffee_cost, user_choice)
+
+        if product_delivered:
+            update_water = MENU[user_choice]["ingredients"]["water"] - resources['water']
+            update_milk = MENU[user_choice]["ingredients"]["milk"] - resources['milk']
+            update_coffee = MENU[user_choice]["ingredients"]["coffee"] - resources['coffee']
+            update_benefits = benefits + coffee_cost
+            report_updated(update_water, update_milk, update_coffee, update_benefits)
+
+
 
 
 
