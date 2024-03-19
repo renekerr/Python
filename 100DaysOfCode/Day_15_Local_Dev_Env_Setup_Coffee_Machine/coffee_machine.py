@@ -10,8 +10,11 @@
 from menu_resources import *
 
 
-def report_updated(water, milk, coffee, earnings):
-    return water, milk, coffee, earnings
+def resources_update(water_used, milk_used, coffee_used):
+    resources['water'] -= water_used
+    resources['milk'] -= milk_used
+    resources['coffee'] -= coffee_used
+    return resources['water'], resources['milk'], resources['coffee']
 
 
 def print_report(water_count, milk_count, coffee_count, money_count):
@@ -71,7 +74,7 @@ while not machine_off:
         print('Coffee machine turned off')
         machine_off = True
     elif user_choice == 'report':
-        w, m, c, e = report_updated(water=resources['water'], milk=resources['milk'], coffee=resources['coffee'], earnings=benefits)
+        w, m, c, e = resources_update(water=resources['water'], milk=resources['milk'], coffee=resources['coffee'], earnings=benefits)
         print_report(w, m, c, e)
     elif user_choice in ('espresso', 'latte', 'cappuccino'):
         resources_check(user_choice)
@@ -89,11 +92,11 @@ while not machine_off:
         product_delivered = money_validation(total_money, coffee_cost, user_choice)
 
         if product_delivered:
-            update_water = MENU[user_choice]["ingredients"]["water"] - resources['water']
-            update_milk = MENU[user_choice]["ingredients"]["milk"] - resources['milk']
-            update_coffee = MENU[user_choice]["ingredients"]["coffee"] - resources['coffee']
+            update_water = MENU[user_choice]["ingredients"]["water"]
+            update_milk = MENU[user_choice]["ingredients"]["milk"]
+            update_coffee = MENU[user_choice]["ingredients"]["coffee"]
             update_benefits = benefits + coffee_cost
-            report_updated(update_water, update_milk, update_coffee, update_benefits)
+            resources_update(update_water, update_milk, update_coffee)
 
 
 
