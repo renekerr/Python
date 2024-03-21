@@ -30,13 +30,31 @@ resources = {
     "coffee": 10,
 }
 
+COINS = {'quarters': 0.25, 'dimes': 0.1, 'nickels': 0.05, 'pennies': 0.01}
 
-user_selection = input("\nWhat would you like? (espresso/latte/cappuccino): ").lower()
-if user_selection in ('espresso', 'latte', 'cappuccino'):
-    selected_drink = MENU[user_selection]
-    ingredients = selected_drink['ingredients']
-    print(selected_drink)
-    for item in ingredients:
-        if resources[item] < ingredients[item]:
-            print(f'Error. Not enough {item}')
+
+total_money = 0
+print('Insert coins, please.')
+for k, v in COINS.items():
+    coins = int(input(f'\tHow many {k}? '))
+    total_money += coins * v
+
+print(f'{total_money:.2F}')
+
+
+# user_selection = input("\nWhat would you like? (espresso/latte/cappuccino): ").lower()
+# if user_selection in ('espresso', 'latte', 'cappuccino'):
+#     selected_drink = MENU[user_selection]
+#     ingredients = selected_drink['ingredients']
+#     items_depleted = []
+#     for item in ingredients:
+#         if resources[item] < ingredients[item]:
+#             items_depleted.append(item)
+#
+#     for i in items_depleted:
+#         print(f'Insufficient {i}')
+#     print('Error: Coffee ingredients depleted. Unable to serve.')
+
+
+
 

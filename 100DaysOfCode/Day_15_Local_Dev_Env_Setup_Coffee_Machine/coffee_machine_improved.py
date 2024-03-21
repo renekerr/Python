@@ -26,19 +26,38 @@ MENU = {
 
 resources = {
     "water": 300,
-    "milk": 20,
-    "coffee": 10,
+    "milk": 200,
+    "coffee": 100,
 }
+
+COINS = {'quarters': 0.25, 'dimes': 0.1, 'nickels': 0.05, 'pennies': 0.01}
 
 
 def resources_check(drink_ingredients):
     """Verifies if there are sufficient resources available to make the selected drink."""
-    items_depleted = ''
+    items_depleted = []
     for item in drink_ingredients:
         if resources[item] < drink_ingredients[item]:
-            print(f'Sorry, there is not enough {item}.')
+            items_depleted.append(item)
+
+    if items_depleted:
+        print('Error: Unable to serve.')
+        for i in items_depleted:
+            print(f'Insufficient {i}.')
         return False
-    return True
+    else:
+        return True
+
+
+def calculate_total_money():
+    """Calculate total money based on user input of coins."""
+    total_money = 0
+    print('Insert coins, please.')
+    for coin_name, coin_value in COINS.items():
+        coins = int(input(f'\tHow many {coin_name}? '))
+        total_money += coins * coin_value
+
+    return total_money
 
 
 earnings = 0
@@ -60,7 +79,11 @@ while machine_on:
         selected_drink = MENU[user_selection]
         ingredients = selected_drink['ingredients']
         if resources_check(drink_ingredients=ingredients):
-            print('Resources OK')
+            coffee_cost = MENU[user_selection]['cost']
+            print(f'\nYour selection: {user_selection.title()}')
+            print(f"Price: {coffee_cost:.2F} $\n")
+            calculate_total_money()
+
     else:
         print('Error. Make sure you enter a valid drink.')
 
