@@ -112,6 +112,7 @@ def coffee_machine():
                 dimes_entered = int(input('\tHow many dimes? '))
                 nickles_entered = int(input('\tHow many nickles? '))
                 pennies_entered = int(input('\tHow many pennies? '))
+
                 total_cash_entered = money_provided_sum(quarters_in=quarters_entered, dimes_in=dimes_entered,
                                                         nickles_in=nickles_entered, pennies_in=pennies_entered)
 

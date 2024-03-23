@@ -41,7 +41,7 @@ def resources_check(drink_ingredients):
             items_depleted.append(item)
 
     if items_depleted:
-        print('Error: Unable to serve.')
+        print('Error. Unable to serve.')
         for i in items_depleted:
             print(f'Insufficient {i}.')
         return False
@@ -56,8 +56,23 @@ def calculate_total_money():
     for coin_name, coin_value in COINS.items():
         coins = int(input(f'\tHow many {coin_name}? '))
         total_money += coins * coin_value
-
+    print(f'\nTotal money entered: {total_money:.2F} $')
     return total_money
+
+
+def is_transaction_valid(money, cost):
+    """Validate the transaction based on the total cash, cost, and coffee selection."""
+    if money >= cost:
+        global earnings
+        earnings += cost
+        print('\nPreparing your coffee and your change...please wait!')
+        change = money - cost
+        print(f'Here is your {user_selection} ☕. Enjoy!.')
+        print(f'Change: {change:.2F} $')
+        return True
+    else:
+        print("Sorry that's not enough money. Money refunded.")
+        return False
 
 
 earnings = 0
@@ -82,10 +97,9 @@ while machine_on:
             coffee_cost = MENU[user_selection]['cost']
             print(f'\nYour selection: {user_selection.title()}')
             print(f"Price: {coffee_cost:.2F} $\n")
-            calculate_total_money()
-
+            payment = calculate_total_money()
+            if is_transaction_valid(payment, coffee_cost):
+                for x in ingredients:
+                    resources[x] -= ingredients[x]
     else:
         print('Error. Make sure you enter a valid drink.')
-
-
-# TODO Add Emojis at the end
