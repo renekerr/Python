@@ -67,7 +67,7 @@ def is_transaction_valid(money, cost):
         earnings += cost
         print('\nPreparing your coffee and your change...please wait!')
         change = money - cost
-        print(f'Here is your {user_selection} ☕. Enjoy!.')
+        print(f'Here is your {user_selection} ☕️. Enjoy!.')
         print(f'Change: {change:.2F} $')
         return True
     else:

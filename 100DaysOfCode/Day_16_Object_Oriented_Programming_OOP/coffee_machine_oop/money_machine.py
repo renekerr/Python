@@ -1,6 +1,6 @@
 class MoneyMachine:
 
-    CURRENCY = "$"
+    CURRENCY = "EUR"
 
     COIN_VALUES = {
         "quarters": 0.25,
@@ -15,13 +15,13 @@ class MoneyMachine:
 
     def report(self):
         """Prints the current profit"""
-        print(f"Money: {self.CURRENCY}{self.profit}")
+        print(f"\tMoney: {self.profit} {self.CURRENCY}")
 
     def process_coins(self):
         """Returns the total calculated from coins inserted."""
         print("Please insert coins.")
         for coin in self.COIN_VALUES:
-            self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+            self.money_received += int(input(f"\tHow many {coin}?: ")) * self.COIN_VALUES[coin]
         return self.money_received
 
     def make_payment(self, cost):
@@ -29,7 +29,7 @@ class MoneyMachine:
         self.process_coins()
         if self.money_received >= cost:
             change = round(self.money_received - cost, 2)
-            print(f"Here is {self.CURRENCY}{change} in change.")
+            print(f"Here is {change} {self.CURRENCY} in change.")
             self.profit += cost
             self.money_received = 0
             return True
