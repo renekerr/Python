@@ -1,0 +1,20 @@
+From main.py
+
+'''
+question_bank = [
+    Question(q1, a1),
+    Question(q2, a2),
+    Question(q3, a3),
+    ...
+]
+
+question_bank = []
+for qa_dict in question_data:
+    k_question = qa_dict['text']
+    v_answer = qa_dict['answer']
+    new_question = Question(k_question, v_answer)
+    question_bank.append(new_question)
+
+print(question_bank[3].text)
+'''
+
